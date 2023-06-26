@@ -1,0 +1,22 @@
+GET http://localhost:8080/hello HTTP/1.1
+
+###
+
+POST http://localhost:8080/medicos HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Alvarenga Peixoto",
+    "email": "alvarenga@gmail.com",
+    "crm": "7853",
+    "especialidade": "ANESTESIOLOGISTA",
+    "endereco": {
+        "logradouro": "Alvares Cabral",
+        "bairro": "Anchieta",
+        "cep": "65998708",
+        "cidade": "Belo Horizonte",
+        "uf": "MG",
+        "complemento": "",
+        "numero": ""
+    }
+}
