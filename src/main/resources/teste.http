@@ -20,3 +20,23 @@ content-type: application/json
         "numero": ""
     }
 }
+
+
+###
+
+POST http://localhost:8080/pacientes HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "João Savassi",
+    "email": "joaosavassi@gmail.com",
+    "endereco": {
+        "logradouro": "Santa Rita Durão",
+        "bairro": "Savassi",
+        "cep": "65998708",
+        "cidade": "Belo Horizonte",
+        "uf": "MG",
+        "complemento": "",
+        "numero": ""
+    }
+}
