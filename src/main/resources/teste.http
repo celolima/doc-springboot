@@ -6,6 +6,10 @@ GET http://localhost:8080/pacientes HTTP/1.1
 
 ###
 
+GET http://localhost:8080/medicos?size=4&page=0&sort=nome,desc HTTP/1.1
+
+###
+
 GET http://localhost:8080/medicos HTTP/1.1
 
 ###
@@ -46,5 +50,71 @@ content-type: application/json
         "uf": "MG",
         "complemento": "",
         "numero": ""
+    }
+}
+
+###
+
+POST http://localhost:8080/medicos HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Mariana Silva",
+    "email": "mariana.silva@example.com",
+    "telefone": "3555659595",
+    "crm": "1234",
+    "especialidade": "GINECOLOGIA",
+    "endereco": {
+        "logradouro": "Rua das Flores",
+        "bairro": "Centro",
+        "cep": "12345678",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "complemento": "Apto 501",
+        "numero": "123"
+    }
+}
+
+###
+
+POST http://localhost:8080/medicos HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Rafael Oliveira",
+    "email": "rafael.oliveira@example.com",
+    "telefone": "3555659595",
+    "crm": "9876",
+    "especialidade": "CARDIOLOGIA",
+    "endereco": {
+        "logradouro": "Av. das Palmeiras",
+        "bairro": "Jardins",
+        "cep": "54321098",
+        "cidade": "Rio de Janeiro",
+        "uf": "RJ",
+        "complemento": "",
+        "numero": "567"
+    }
+}
+
+###
+
+POST http://localhost:8080/medicos HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Juliana Santos",
+    "email": "juliana.santos@example.com",
+    "telefone": "3555659595",
+    "crm": "2468",
+    "especialidade": "DERMATOLOGIA",
+    "endereco": {
+        "logradouro": "Rua dos Lírios",
+        "bairro": "Floresta",
+        "cep": "98765432",
+        "cidade": "Porto Alegre",
+        "uf": "RS",
+        "complemento": "",
+        "numero": "987"
     }
 }

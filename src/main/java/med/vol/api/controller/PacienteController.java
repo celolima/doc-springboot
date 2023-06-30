@@ -1,8 +1,8 @@
 package med.vol.api.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,8 +27,8 @@ public class PacienteController {
 	}
 	
 	@GetMapping
-	public List<DadosListagemPaciente> listar() {
-		return repository.findAll().stream().map(DadosListagemPaciente::new).toList();
+	public Page<DadosListagemPaciente> listar(Pageable paginacao) {
+		return repository.findAll(paginacao).map(DadosListagemPaciente::new);
 	}		
 	
 }
