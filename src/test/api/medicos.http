@@ -1,16 +1,9 @@
-GET http://localhost:8080/hello HTTP/1.1
 
-###
-
-GET http://localhost:8080/pacientes HTTP/1.1
+GET http://localhost:8080/medicos HTTP/1.1
 
 ###
 
 GET http://localhost:8080/medicos?size=4&page=0&sort=nome,desc HTTP/1.1
-
-###
-
-GET http://localhost:8080/medicos HTTP/1.1
 
 ###
 
@@ -25,26 +18,6 @@ content-type: application/json
     "endereco": {
         "logradouro": "Alvares Cabral",
         "bairro": "Anchieta",
-        "cep": "65998708",
-        "cidade": "Belo Horizonte",
-        "uf": "MG",
-        "complemento": "",
-        "numero": ""
-    }
-}
-
-
-###
-
-POST http://localhost:8080/pacientes HTTP/1.1
-content-type: application/json
-
-{
-    "nome": "João Savassi",
-    "email": "joaosavassi@gmail.com",
-    "endereco": {
-        "logradouro": "Santa Rita Durão",
-        "bairro": "Savassi",
         "cep": "65998708",
         "cidade": "Belo Horizonte",
         "uf": "MG",
@@ -118,3 +91,18 @@ content-type: application/json
         "numero": "987"
     }
 }
+
+###
+
+PUT http://localhost:8080/medicos HTTP/1.1
+content-type: application/json
+
+{
+    "id": 3,
+    "nome": "Rafael Silva",
+    "telefone": "3198989898"
+}
+
+###
+
+DELETE  http://localhost:8080/medicos/2 HTTP/1.1
