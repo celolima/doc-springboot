@@ -55,9 +55,9 @@ content-type: application/json
 
 {
     "nome": "Rafael Oliveira",
-    "email": "rafael.oliveira@example.com",
-    "telefone": "3555659595",
-    "crm": "9876",
+    "email": "rafael.oliv@example.com",
+    "telefone": "355565239595",
+    "crm": "1245",
     "especialidade": "CARDIOLOGIA",
     "endereco": {
         "logradouro": "Av. das Palmeiras",
