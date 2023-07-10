@@ -19,12 +19,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.vol.api.medico.DadosAtualizacaoMedico;
-import med.vol.api.medico.DadosCadastroMedico;
-import med.vol.api.medico.DadosDetalhamentoMedico;
-import med.vol.api.medico.DadosListagemMedico;
-import med.vol.api.medico.Medico;
-import med.vol.api.medico.MedicoRepository;
+import med.vol.api.domain.medico.DadosAtualizacaoMedico;
+import med.vol.api.domain.medico.DadosCadastroMedico;
+import med.vol.api.domain.medico.DadosDetalhamentoMedico;
+import med.vol.api.domain.medico.DadosListagemMedico;
+import med.vol.api.domain.medico.Medico;
+import med.vol.api.domain.medico.MedicoRepository;
 
 @RestController
 @RequestMapping("medicos")
@@ -59,8 +59,9 @@ public class MedicoController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<DadosDetalhamentoMedico>> listar(@PathVariable Long id) {
-		return ResponseEntity.ok(repository.findById(id).map(DadosDetalhamentoMedico::new));
+	public ResponseEntity<DadosDetalhamentoMedico> listar(@PathVariable Long id) {
+		Medico medico = repository.getReferenceById(id);
+		return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
 	}
 	
 	@PutMapping

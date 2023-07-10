@@ -1,4 +1,4 @@
-package med.vol.api.endereco;
+package med.vol.api.domain.endereco;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import med.vol.api.medico.DadosAtualizacaoMedico;
+import med.vol.api.domain.medico.DadosAtualizacaoMedico;
 
 @Embeddable
 @Getter
